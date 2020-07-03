@@ -1,20 +1,140 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Weather Works</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-      
+    <section class="hero is-small is-light is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-narrow">
+                  <h1 class="title Fonts">Weather Works</h1>
+                </div>
+                <div class="column">
+                  <div class="field has-addons">
+                      <div class="control">
+                        <input class="input city" type="text" placeholder="Find a city">
+                      </div>
+                      <div class="control">
+                        <a class="button is-info search">Search City</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="column is-hidden recent-cities-container">
+                  <h4>Recently searched cities:</h4>
+                    <div class="buttons recent-cities">
+                        <button class="button is-small recentSearch">Salt Lake City</button>
+                        <button class="button is-small recentSearch">Price</button>
+                        <button class="button is-small recentSearch">New York City</button>
+                        <button class="button is-small recentSearch">Miami</button>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="section has-background-grey has-text-white-bis">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <h2 class="title has-text-white-bis" id="cityMain">City</h2>
+            <h3 class="subtitle has-text-white-bis" id="dateMain">Date</h3>
+          </div>
+          <div class="column">
+            <div class="columns is-vcentered">
+              <div class="column is-narrow">
+                <img id="iconMain" src="#" alt="current weather icon">
+              </div>
+              <div class="column">
+                <p class="is-size-1 Fonts"><span id="degreeMain"></span> &#176;F</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+              <p><b>Humidity: </b><span id="humidityMain"></span></p>
+              <p><b>Wind speed: </b><span id="windMain"></span></p>
+              <p><b>UV index: </b><span id="uvIndexMain"></span></p>
+            </div>
+          </div>
+         </div>
+    </section>
+    <section class="section has-background-info">
+      <div class="container">
+        <h2 class="title is-4 is-uppercase Fonts has-text-white-ter">5 day forecast</h2>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent ">
+            <article class="tile is-child box backgrounds">
+              <h3 class="title is-5 has-text-link" data-index="0">One</h3>
+              <img src="#" alt="weather icon" class="img0">
+              <p class="subtitle is-2 Fonts has-text-white-bis temp0">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid0"></span></p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box backgrounds">
+              <h3 class="title is-5 has-text-link" data-index="1">Two</h3>
+              <img src="#" alt="weather icon" class="img1">
+              <p class="subtitle is-2 Fonts has-text-white-bis temp1">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid1"></span></p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box backgrounds">
+              <h3 class="title is-5 has-text-link" data-index="2">Three</h3>
+              <img src="#" alt="weather icon" class="img2">
+              <p class="subtitle is-2 Fonts has-text-white-bis temp2">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid2"></span></p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box backgrounds">
+              <h3 class="title is-5 has-text-link" data-index="3">Four</h3>
+              <img src="#" alt="weather icon" class="img3">
+              <p class="subtitle is-2 Fonts has-text-white-bis temp3">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid3"></span></p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box backgrounds">
+              <h3 class="title is-5 has-text-link" data-index="4">Five</h3>
+              <img src="#" alt="weather icon" class="img4">
+              <p class="subtitle is-2 Fonts has-text-white-bis temp4">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid4"></span></p>
+            </article>
+          </div>
+        </div>
+      </div>    
+    </section>
+    <section class="footer">
+      <div class="container">
+        <p>Copyright 2020 WeatherWorks "If only we could Look Back" </p>
+      </div>
+    </section>
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="script.js"></script>
+
+</body>
 </html>
