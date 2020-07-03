@@ -14,6 +14,10 @@ $("#dateMain").text(currentDate);
 $(".search").on("click", function(){
     if (GetCity = "Muir Woods") {
         getBigfoot();
+        GetCity = $(".city").val();
+    getWeather(GetCity); 
+    createRecentSearchBtn(GetCity);
+    saveToLocalStorage(GetCity);
     }
     else {
     GetCity = $(".city").val();
