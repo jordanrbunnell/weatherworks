@@ -12,10 +12,29 @@ var currentDay = now.format("DD");
 $("#dateMain").text(currentDate);
 
 $(".search").on("click", function(){
+    if (GetCity = "Muir Woods") {
+        getBigfoot();
+    }
+    else {
     GetCity = $(".city").val();
     getWeather(GetCity); 
     createRecentSearchBtn(GetCity);
     saveToLocalStorage(GetCity);
+    }
+});
+function getBigfoot() {
+    $("#Bigfoot").text("Bigfoot's Home");
+    $("#BF").append('<img src="bigfoot.gif">');
+
+    
+}
+
+
+$(".clear").on("click", function(){
+    window.localStorage.clear();
+    location.reload();
+
+
 });
 
 function createRecentSearchBtn(GetCity) {
@@ -89,5 +108,31 @@ function currentLocation() {
             console.log(GetCity);
             getWeather(GetCity);
     });  
+};
+
+
+function checkLocalStorage() {
+    var storedData = localStorage.getItem('queries');
+    var dataArray = [];
+    if(!storedData) {
+        console.log("no data stored")
+    } else {
+        storedData.trim();
+        dataArray = storedData.split(",");
+        for (var i=0; i<dataArray.length; i++) {
+            createRecentSearchBtn(dataArray[i]);
+        }
+    };
+};
+
+function saveToLocalStorage(GetCity) {
+    var data = localStorage.getItem('queries');
+    if(data) {
+        data = data + ","+ GetCity;
+        localStorage.setItem('queries', data);
+    } else {
+        data = GetCity;
+        localStorage.setItem('queries', data);
+    };
 };
 

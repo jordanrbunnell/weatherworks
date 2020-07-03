@@ -3,12 +3,12 @@
 }
 
 .backgrounds {
-    background: rgb(50,152,220);
+    background: rgb(71, 127, 163);
     background: linear-gradient(0deg, rgba(50,152,220,1) 0%, rgba(95,191,255,1) 88%);
 }
 
 .footer {
-    background: rgb(250,250,250);
+    background: rgb(163, 27, 27);
     background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(255,255,255,1) 88%);
 }
 
