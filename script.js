@@ -12,15 +12,20 @@ var currentDay = now.format("DD");
 $("#dateMain").text(currentDate);
 
 $(".search").on("click", function(){
-    if (GetCity = "Muir Woods") {
+    console.log(GetCity)
+    GetCity = $(".city").val();
+    if (GetCity === "Muir Woods") {
+        console.log(GetCity)
+
         getBigfoot();
-        GetCity = $(".city").val();
     getWeather(GetCity); 
     createRecentSearchBtn(GetCity);
     saveToLocalStorage(GetCity);
     }
     else {
-    GetCity = $(".city").val();
+        console.log(GetCity)
+
+    // GetCity = $(".city").val();
     getWeather(GetCity); 
     createRecentSearchBtn(GetCity);
     saveToLocalStorage(GetCity);
